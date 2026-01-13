@@ -8,7 +8,7 @@ st.title("🌴 Deteksi Kematangan Sawit (live)")
 # Load Model
 @st.cache_resource
 def load_model():
-    return YOLO("best.pt")
+    return YOLO("best(1).pt")
 
 try:
     model = load_model()
@@ -32,4 +32,5 @@ if img_file is not None:
     for r in results:
         for c in r.boxes.cls:
             st.info(f"Terdeteksi: {names[int(c)]}")
+
 
