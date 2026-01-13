@@ -3,7 +3,7 @@ from ultralytics import YOLO
 from PIL import Image
 
 st.set_page_config(page_title="Deteksi Sawit Cloud", page_icon="🌴")
-st.title("🌴 Deteksi Kematangan Sawit (Cloud)")
+st.title("🌴 Deteksi Kematangan Sawit (live)")
 
 # Load Model
 @st.cache_resource
@@ -32,3 +32,4 @@ if img_file is not None:
     for r in results:
         for c in r.boxes.cls:
             st.info(f"Terdeteksi: {names[int(c)]}")
+
