@@ -31,5 +31,4 @@ if img_file is not None:
     names = model.names
     for r in results:
         for c in r.boxes.cls:
-
             st.info(f"Terdeteksi: {names[int(c)]}")
