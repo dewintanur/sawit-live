@@ -1,7 +1,6 @@
 import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
-import pil_image_to_byte_array # Nanti kita akali import ini jika perlu, tapi standar PIL aman
 
 st.set_page_config(page_title="Deteksi Sawit Cloud", page_icon="🌴")
 st.title("🌴 Deteksi Kematangan Sawit (Cloud)")
@@ -32,4 +31,5 @@ if img_file is not None:
     names = model.names
     for r in results:
         for c in r.boxes.cls:
+
             st.info(f"Terdeteksi: {names[int(c)]}")
